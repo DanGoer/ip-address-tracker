@@ -1,13 +1,36 @@
+@tailwind base;
+
+@tailwind utilities;
+
+@layer base {
+}
+
+@tailwind components;
+
+@layer components {
+  body {
+    font-family: "Rubik", sans-serif;
+  }
+  .bg-nav {
+    background-image: url("/public/pattern-bg.png");
+  }
+
+  .bg-setup {
+    @apply bg-fixed bg-center bg-cover py-40 md:py-48 lg:py-48
+    w-full flex flex-col items-center justify-start gap-6 md:gap-12;
+  }
+}
+
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
