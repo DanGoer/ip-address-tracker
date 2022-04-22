@@ -2,21 +2,24 @@ import Headline from "./components/Headline";
 import InfoBar from "./components/InfoBar";
 import IpMap from "./components/IpMap";
 import SearchBar from "./components/SearchBar";
-import navbar from "../../assets/images/pattern-bg.png";
 
 function Home() {
   return (
-    <main className="flex flex-col justify-center items-center">
-      <img className="w-full h-auto bg-fixed z-1" src={navbar} alt="Nav Bar" />
-
-      <div className="h-100 w-auto">
+    <div>
+      <main className="bg-nav bg-setup py-6 flex flex-col justify-center items-center ">
         <Headline />
         <SearchBar />
         <InfoBar />
         <IpMap />
-      </div>
-    </main>
+      </main>
+    </div>
   );
 }
 
 export default Home;
+
+// <img
+//         className="justify-start bg-fixed bg-center bg-cover w-full h-auto z-1"
+//       src={navbar}
+//     alt="Nav Bar"
+// />

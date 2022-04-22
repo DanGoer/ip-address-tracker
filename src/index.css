@@ -11,12 +11,13 @@
   body {
     font-family: "Rubik", sans-serif;
   }
+
   .bg-nav {
     background-image: url("/public/pattern-bg.png");
   }
 
   .bg-setup {
-    @apply bg-fixed bg-center bg-cover py-40 md:py-48 lg:py-48
+    @apply bg-fixed  h-80 
     w-full flex flex-col items-center justify-start gap-6 md:gap-12;
   }
 }
