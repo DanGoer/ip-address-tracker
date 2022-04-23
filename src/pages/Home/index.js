@@ -7,9 +7,10 @@ import SearchBar from "./components/SearchBar";
 
 function Home() {
   const [location, setLocation] = useState("");
-  const [ipAddress, setIPAddress] = useState("");
+  const [ipAddress, setIPAddress] = useState("80.133.167.104");
   const [timeZone, setTimeZone] = useState("");
   const [isp, setIsp] = useState("");
+  const [data, setData] = useState();
 
   const API_KEY = process.env.REACT_APP_IP_ADDRESS_TRACKER_API_KEY;
   console.log(API_KEY);
@@ -17,16 +18,19 @@ function Home() {
   useEffect(() => {
     axios
       .get(
-        `https://geo.ipify.org/api/v2/country,city?apiKey=${API_KEY}ipAddress=8.8.8.8`
+        `https://geo.ipify.org/api/v2/country,city?apiKey=${API_KEY}&ipAddress=${ipAddress}`
       )
-      .then((response) => {});
+      .then((response) => {
+        setData(response);
+        console.log(response);
+      });
   }, []);
 
   return (
     <div>
       <main className="bg-nav bg-setup py-6 flex flex-col justify-center items-center ">
         <Headline />
-        <SearchBar />
+        <SearchBar setIPAddress={setIPAddress} ipAddress={ipAddress} />
         <InfoBar />
         <IpMap />
       </main>
