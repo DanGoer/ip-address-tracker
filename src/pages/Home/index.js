@@ -6,11 +6,9 @@ import IpMap from "./components/IpMap";
 import SearchBar from "./components/SearchBar";
 
 function Home() {
-  const [location, setLocation] = useState("");
   const [ipAddress, setIPAddress] = useState("80.133.167.104");
-  const [timeZone, setTimeZone] = useState("");
-  const [isp, setIsp] = useState("");
-  const [data, setData] = useState();
+
+  const [data, setData] = useState({});
 
   const API_KEY = process.env.REACT_APP_IP_ADDRESS_TRACKER_API_KEY;
   console.log(API_KEY);
@@ -31,7 +29,7 @@ function Home() {
       <main className="bg-nav bg-setup py-6 flex flex-col justify-center items-center ">
         <Headline />
         <SearchBar setIPAddress={setIPAddress} ipAddress={ipAddress} />
-        <InfoBar />
+        <InfoBar data={data} />
         <IpMap />
       </main>
     </div>
