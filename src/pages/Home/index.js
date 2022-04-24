@@ -7,11 +7,11 @@ import SearchBar from "./components/SearchBar";
 
 function Home() {
   const [ipAddress, setIPAddress] = useState("80.133.167.104");
+  const [data, setData] = useState(null);
 
-  const [data, setData] = useState({});
+  console.log(JSON.stringify(data.data.location.lat));
 
   const API_KEY = process.env.REACT_APP_IP_ADDRESS_TRACKER_API_KEY;
-  console.log(API_KEY);
 
   useEffect(() => {
     axios
@@ -29,14 +29,17 @@ function Home() {
       <main className="bg-nav bg-setup py-6 flex flex-col justify-center items-center ">
         <Headline />
         <SearchBar setIPAddress={setIPAddress} ipAddress={ipAddress} />
-        <InfoBar data={data} />
-        <IpMap />
+        ( data.location.lat ?<InfoBar data={data} /> : <div></div>) (
+        data.location.lat ?
+        <IpMap lat={data.location.lat} lng={data.location.lng} /> : <div></div>)
       </main>
     </div>
   );
 }
 
 export default Home;
+
+// <IpMap lat={data.location.lat} lng={data.location.lng} />;
 
 // <img
 //         className="justify-start bg-fixed bg-center bg-cover w-full h-auto z-1"
