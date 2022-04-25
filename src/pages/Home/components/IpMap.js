@@ -11,16 +11,19 @@ function MapLocation({ lng, lat }) {
   return null;
 }
 
-const IpMap = ({ lat, lng }) => {
-  console.log(JSON.stringify(lat + lng));
-  return lng ? (
-    <MapContainer center={{ lat: "38.8951", lng: "-77.0364" }} zoom={13}>
-      <MapLocation lat={lat} lng={lng} />
+const IpMap = ({ data }) => {
+  console.log(JSON.stringify(data.data.location.lat));
+  return data ? (
+    <MapContainer
+      center={{ lat: data.data.location.lat, lng: data.data.location.lng }}
+      zoom={13}
+    >
+      <MapLocation lat={data.data.location.lat} lng={data.data.location.lng} />
       <TileLayer
         attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
         url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
       />
-      <LeafMarker lat={lat} lng={lng} />
+      <LeafMarker lat={data.data.location.lng} lng={data.data.location.lng} />
     </MapContainer>
   ) : (
     <div></div>
