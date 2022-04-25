@@ -24,20 +24,21 @@ function Home() {
   }, []);
 
   return (
-    <div>
-      <main className="bg-nav bg-setup py-6 flex flex-col justify-center items-center ">
+    <main className="h-screen">
+      <header className="pt-6 lg:pt-8 h-72 lg:h-68 text-center relative bg-nav">
         <Headline />
-        <SearchBar setIPAddress={setIPAddress} ipAddress={ipAddress} />
-        {data ? <InfoBar data={data} /> : <div></div>}
 
-        {data ? <IpMap data={data} /> : <div></div>}
-      </main>
-    </div>
+        {data ? <InfoBar data={data} /> : <div></div>}
+      </header>
+      {data ? <IpMap data={data} /> : <div></div>}
+    </main>
   );
 }
 
 export default Home;
 
+// className="bg-nav bg-setup py-90 flex flex-col justify-center items-center relative h-[35vh] "
+// <SearchBar setIPAddress={setIPAddress} ipAddress={ipAddress} />
 // console.log(JSON.stringify(data.data.location.lat));
 
 // <IpMap lat={data.location.lat} lng={data.location.lng} />;
