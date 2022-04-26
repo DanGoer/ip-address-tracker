@@ -1,9 +1,12 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
+import Footer from "./components/Footer";
 import Headline from "./components/Headline";
 import InfoBar from "./components/InfoBar";
 import IpMap from "./components/IpMap";
 import SearchBar from "./components/SearchBar";
+
+// todo: integrate app.css ind index.css
 
 function Home() {
   const [ipAddress, setIPAddress] = useState("180.133.167.104");
@@ -40,20 +43,9 @@ function Home() {
         {data ? <InfoBar data={data} /> : <div></div>}
       </header>
       {data ? <IpMap data={data} /> : <div></div>}
+      <Footer />
     </main>
   );
 }
 
 export default Home;
-
-// className="bg-nav bg-setup py-90 flex flex-col justify-center items-center relative h-[35vh] "
-
-// console.log(JSON.stringify(data.data.location.lat));
-
-// <IpMap lat={data.location.lat} lng={data.location.lng} />;
-
-// <img
-//         className="justify-start bg-fixed bg-center bg-cover w-full h-auto z-1"
-//       src={navbar}
-//     alt="Nav Bar"
-// />
