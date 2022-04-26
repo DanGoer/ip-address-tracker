@@ -1,22 +1,10 @@
-import React, { useEffect } from "react";
 import { MapContainer, Marker, Popup, TileLayer, useMap } from "react-leaflet";
-import LeafMarker from "../../../components/elements/LeafMarker";
 import "../../../App.css";
 
-function MapLocation({ lng, lat }) {
-  useEffect(() => {
-    map.panTo([lat, lng]);
-  }, []);
-
-  const map = useMap();
-  return null;
-}
-
 const IpMap = ({ data }) => {
-  console.log(JSON.stringify(data.data.location.lat));
   return data ? (
     <MapContainer
-      className="h-[65vh] relative"
+      className="h-[65vh] relative z-10"
       center={[data.data.location.lat, data.data.location.lng]}
       zoom={13}
       scrollWheelZoom={false}
@@ -26,9 +14,7 @@ const IpMap = ({ data }) => {
         url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
       />
       <Marker position={[data.data.location.lat, data.data.location.lng]}>
-        <Popup>
-          A pretty CSS3 popup. <br /> Easily customizable.
-        </Popup>
+        <Popup>Your location</Popup>
       </Marker>
     </MapContainer>
   ) : (
@@ -37,9 +23,3 @@ const IpMap = ({ data }) => {
 };
 
 export default IpMap;
-
-// className="w-full absolute items-center bg-center flex justify-center"
-
-// <MapLocation lat={data.data.location.lat} lng={data.data.location.lng} />
-
-// <LeafMarker lat={data.data.location.lng} lng={data.data.location.lng} />
