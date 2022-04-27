@@ -1,5 +1,4 @@
 import { useState } from "react";
-import arrow from "../../../assets/icon-arrow.svg";
 
 function SearchBar({ setIPAddress, ipAddress }) {
   const [value, setValue] = useState("");
@@ -19,17 +18,11 @@ function SearchBar({ setIPAddress, ipAddress }) {
         type="text"
         onChange={handleInput}
         placeholder={ipAddress}
-      ></input>
-      <svg
-        className="w-8 h-8 fill-black hover:cursor-pointer"
-        xmlns="http://www.w3.org/2000/svg"
-        viewBox="0 0 512 512"
-      >
-        <path d="M2 1l6 6-6 6" />
-      </svg>
-      <svg className="fill-black w-8 h-8" src={arrow}></svg>
-      <button type="submit" onClick={sendValue()} src={arrow}>
-        hallo
+      />
+      <button type="submit" onClick={() => sendValue()}>
+        <svg xmlns="http://www.w3.org/2000/svg" width="11" height="14">
+          <path fill="black" stroke="#FFF" strokeWidth="3" d="M2 1l6 6-6 6" />
+        </svg>
       </button>
     </div>
   );
