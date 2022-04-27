@@ -6,8 +6,6 @@ import InfoBar from "./components/InfoBar";
 import IpMap from "./components/IpMap";
 import SearchBar from "./components/SearchBar";
 
-// todo: integrate app.css ind index.css
-
 function Home() {
   const [ipAddress, setIPAddress] = useState("");
   const [data, setData] = useState(null);
@@ -37,7 +35,7 @@ function Home() {
 
   return (
     <main className="h-screen">
-      <header className="pt-6 lg:pt-8 h-72 lg:h-68 text-center relative bg-nav flex flex-col items-center gap-4">
+      <header className="pt-6 lg:pt-8 h-[32%] text-center relative bg-nav bg-center flex flex-col items-center gap-4">
         <Headline />
         <SearchBar setIPAddress={setIPAddress} ipAddress={ipAddress} />
         {data && <InfoBar data={data} />}

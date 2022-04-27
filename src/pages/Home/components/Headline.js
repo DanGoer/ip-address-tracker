@@ -1,7 +1,7 @@
 function Headline() {
   return (
     <>
-      <h1 className="font-rubik font-semibold font-weight text-3xl text-white h-auto">
+      <h1 className="font-rubik font-medium text-[1.65rem] text-white">
         IP Address Tracker
       </h1>
     </>

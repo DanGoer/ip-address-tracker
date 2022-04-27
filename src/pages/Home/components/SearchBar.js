@@ -14,12 +14,16 @@ function SearchBar({ setIPAddress, ipAddress }) {
   return (
     <div className="flex flex-row items-center z-30">
       <input
-        className="w-80 h-10 hover:cursor-pointer border-1 "
+        className="w-72 h-14 hover:cursor-pointer rounded-l-2xl pl-6 text-xl text-vdg placeholder-dg"
         type="text"
         onChange={handleInput}
         placeholder={ipAddress}
       />
-      <button type="submit" onClick={() => sendValue()}>
+      <button
+        className="bg-black h-full w-14 rounded-r-2xl hover:bg-vdg flex justify-center items-center"
+        type="submit"
+        onClick={() => sendValue()}
+      >
         <svg xmlns="http://www.w3.org/2000/svg" width="11" height="14">
           <path fill="black" stroke="#FFF" strokeWidth="3" d="M2 1l6 6-6 6" />
         </svg>

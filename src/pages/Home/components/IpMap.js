@@ -1,5 +1,4 @@
 import { MapContainer, Marker, Popup, TileLayer, useMap } from "react-leaflet";
-import "../../../App.css";
 
 function ChangeMap({ center, zoom }) {
   const map = useMap();
