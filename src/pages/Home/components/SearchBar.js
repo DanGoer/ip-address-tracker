@@ -1,26 +1,26 @@
-import { useState } from "react";
+import { useState } from "react"
 
 function SearchBar({ setIPAddress, ipAddress }) {
-  const [value, setValue] = useState("");
+  const [value, setValue] = useState("")
 
   const handleInput = (event) => {
-    setValue(event.currentTarget.value);
-  };
+    setValue(event.currentTarget.value)
+  }
 
   const sendValue = () => {
-    setIPAddress(value);
-  };
+    setIPAddress(value)
+  }
 
   return (
-    <div className="flex flex-row items-center z-30">
+    <div className="flex flex-row w-10/12 items-center z-30 max-w-xl">
       <input
-        className="w-72 h-14 hover:cursor-pointer rounded-l-2xl pl-6 text-xl text-vdg placeholder-dg"
+        className="w-full h-14 hover:cursor-pointer rounded-l-2xl pl-6 text-xl text-vdg placeholder-dg"
         type="text"
         onChange={handleInput}
-        placeholder={ipAddress}
+        placeholder="Search for any IP address or domain"
       />
       <button
-        className="bg-black h-full w-14 rounded-r-2xl hover:bg-vdg flex justify-center items-center"
+        className="bg-black h-full w-16 rounded-r-2xl hover:bg-vdg flex justify-center items-center"
         type="submit"
         onClick={() => sendValue()}
       >
@@ -29,7 +29,7 @@ function SearchBar({ setIPAddress, ipAddress }) {
         </svg>
       </button>
     </div>
-  );
+  )
 }
 
-export default SearchBar;
+export default SearchBar

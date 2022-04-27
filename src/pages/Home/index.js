@@ -1,25 +1,25 @@
-import axios from "axios";
-import { useEffect, useState } from "react";
-import Footer from "./components/Footer";
-import Headline from "./components/Headline";
-import InfoBar from "./components/InfoBar";
-import IpMap from "./components/IpMap";
-import SearchBar from "./components/SearchBar";
+import axios from "axios"
+import { useEffect, useState } from "react"
+import Footer from "./components/Footer"
+import Headline from "./components/Headline"
+import InfoBar from "./components/InfoBar"
+import IpMap from "./components/IpMap"
+import SearchBar from "./components/SearchBar"
 
 function Home() {
-  const [ipAddress, setIPAddress] = useState("");
-  const [data, setData] = useState(null);
+  const [ipAddress, setIPAddress] = useState("")
+  const [data, setData] = useState(null)
 
-  const API_KEY = process.env.REACT_APP_IP_ADDRESS_TRACKER_API_KEY;
+  const API_KEY = process.env.REACT_APP_IP_ADDRESS_TRACKER_API_KEY
 
   const getData = async () => {
-    const res = await axios.get("https://geolocation-db.com/json/");
-    setIPAddress(res.data.IPv4);
-  };
+    const res = await axios.get("https://geolocation-db.com/json/")
+    setIPAddress(res.data.IPv4)
+  }
 
   useEffect(() => {
-    getData();
-  }, []);
+    getData()
+  }, [])
 
   useEffect(() => {
     axios
@@ -27,11 +27,11 @@ function Home() {
         `https://geo.ipify.org/api/v2/country,city?apiKey=${API_KEY}&ipAddress=${ipAddress}`
       )
       .then((response) => {
-        setData(response);
+        setData(response)
 
-        console.log(response);
-      });
-  }, [ipAddress]);
+        console.log(response)
+      })
+  }, [ipAddress])
 
   return (
     <main className="h-screen">
@@ -43,7 +43,7 @@ function Home() {
       {data && <IpMap data={data} />}
       <Footer />
     </main>
-  );
+  )
 }
 
-export default Home;
+export default Home
