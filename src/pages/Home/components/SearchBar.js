@@ -9,6 +9,7 @@ function SearchBar({ setIPAddress, ipAddress }) {
 
   const sendValue = () => {
     setIPAddress(value)
+    setValue("")
   }
 
   return (
@@ -17,15 +18,15 @@ function SearchBar({ setIPAddress, ipAddress }) {
         className="w-full h-14 hover:cursor-pointer rounded-l-2xl pl-6 text-xl text-vdg placeholder-dg"
         type="text"
         onChange={handleInput}
-        placeholder="Search for any IP address or domain"
+        value={value}
+        placeholder={ipAddress}
       />
       <button
         className="bg-black h-full w-16 rounded-r-2xl hover:bg-vdg flex justify-center items-center"
-        type="submit"
         onClick={() => sendValue()}
       >
         <svg xmlns="http://www.w3.org/2000/svg" width="11" height="14">
-          <path fill="black" stroke="#FFF" strokeWidth="3" d="M2 1l6 6-6 6" />
+          <path stroke="#FFF" strokeWidth="3" d="M2 1l6 6-6 6" />
         </svg>
       </button>
     </div>

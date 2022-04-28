@@ -1,7 +1,7 @@
 function InfoBar({ data }) {
   return (
-    <section className="w-10/12 h-80 lg:h-min bg-white rounded-2xl items-center justify-center z-20 lg:mt-14">
-      <ul className="flex flex-col gap-4 lg:flex-row py-6 lg:px-6 text-left lg:gap-16">
+    <section className="w-10/12 h-80 lg:h-min bg-white rounded-2xl items-center justify-center z-20 lg:mt-12">
+      <ul className="flex flex-col gap-4 lg:flex-row py-6 lg:px-6 lg:text-left lg:gap-16 text-center">
         <li className="flex flex-col items-center justify-center lg:items-start text-left lg:gap-2">
           <p className="font-semibold text-[0.7rem] text-dg tracking-widest ">
             IP ADDRESS
@@ -13,7 +13,7 @@ function InfoBar({ data }) {
             LOCATION
           </p>
           <b className="font-medium text-xl">
-            {data.data.location.city}, {data.data.location.region}{" "}
+            {data.data.location.city}, {data.data.location.region}
             {data.data.location.postalCode}
           </b>
         </li>

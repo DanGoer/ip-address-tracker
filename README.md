@@ -1,70 +1,74 @@
-# Getting Started with Create React App
+# IP-Address-Tracker
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+> Another intermediate Frontend Mentor Challenge from (https://www.frontendmentor.io/home). This time with React, Tailwind and leaflet.
 
-## Available Scripts
+## Table of Contents
 
-In the project directory, you can run:
+- [General Info](#general-information)
+- [Technologies Used](#technologies-used)
+- [Features](#features)
+- [Setup](#setup)
+- [Usage](#usage)
+- [Project Status](#project-status)
+- [Room for Improvement](#room-for-improvement)
+- [Contact](#contact)
+- [License](#license)
 
-### `npm start`
+## General Information
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+This project was created with the purpose of learning how to handle different APIs and map plugin.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Technologies Used
 
-### `npm test`
+- React - version 17.0.2
+- Tailwind - version 3.0.24
+- axios - version 0.26.1
+- leaflet - version 1.8.0
+- react-leaflet - version 4.0.0
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Features
 
-### `npm run build`
+- On the first time the page is called, the IP of the visitor is displayed
+- App shows requested IPs and additional data
+- Shows a map and the position of the IP owner
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Setup
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+For running it on your local environment first:
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+`npm install or yarn install`
 
-### `npm run eject`
+You have to create an .env with a API key which you can get for free from (https://geo.ipify.org/).
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+`REACT_APP_IP_ADDRESS_TRACKER_API_KEY=YOURAPIKEY`
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+To run development server:
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+`npm start or yarn start`
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+Open http://localhost:3000 with your browser to see the result.
+For a full list of dependencies take a look at package.json.
 
-## Learn More
+## Usage
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+After visiting the page, you get information to your IP and additional data.
+You can also request informations about other IPs.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## Project Status
 
-### Code Splitting
+Project is: _complete_
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+This is the finished version of my IP address tracker.
 
-### Analyzing the Bundle Size
+## Room for Improvement
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+- Adding more interaction with the map
+- Adding CAPTCHA-test for security and anti spam reasons
 
-### Making a Progressive Web App
+## Contact
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+Created by [@DanGoer](https://www.github.com/DanGoer/) - feel free to contact me!
 
-### Advanced Configuration
+## License
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Feel free to use this code for your own projects!

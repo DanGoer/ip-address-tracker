@@ -12,30 +12,29 @@ function Home() {
 
   const API_KEY = process.env.REACT_APP_IP_ADDRESS_TRACKER_API_KEY
 
-  const getData = async () => {
-    const res = await axios.get("https://geolocation-db.com/json/")
-    setIPAddress(res.data.IPv4)
-  }
-
+  // Gets the IP from user
   useEffect(() => {
-    getData()
+    const getIp = async () => {
+      const res = await axios.get("https://geolocation-db.com/json/")
+      setIPAddress(res.data.IPv4)
+    }
+    getIp()
   }, [])
 
+  // Gets data for requested IP
   useEffect(() => {
-    axios
-      .get(
+    const getData = async () => {
+      const res = await axios.get(
         `https://geo.ipify.org/api/v2/country,city?apiKey=${API_KEY}&ipAddress=${ipAddress}`
       )
-      .then((response) => {
-        setData(response)
-
-        console.log(response)
-      })
+      setData(res)
+    }
+    getData()
   }, [ipAddress])
 
   return (
     <main className="h-screen">
-      <header className="pt-6 lg:pt-8 h-[32%] text-center relative bg-nav bg-center flex flex-col items-center gap-4">
+      <header className="pt-6 lg:pt-8 h-64 text-center relative bg-nav bg-center bg-cover flex flex-col items-center gap-4">
         <Headline />
         <SearchBar setIPAddress={setIPAddress} ipAddress={ipAddress} />
         {data && <InfoBar data={data} />}
